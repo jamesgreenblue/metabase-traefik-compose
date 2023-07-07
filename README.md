@@ -15,9 +15,7 @@ A production ready docker compose file to deploy Metabase. Please refer to the o
 - [Docker](https://www.docker.com/)
 - [Docker Compose](https://docs.docker.com/compose/)
 
-# Configuration
-
-Container configurations depend on environment variables defined in an .env file.
+# Getting started
 
 1. Duplicate the .env.example file and rename it to .env
 2. Update the environment variables as needed
@@ -31,7 +29,7 @@ Container configurations depend on environment variables defined in an .env file
 
 `MB_HOST`: the public URL that people will access Metabase from (assumes DNS is pointed correctly)
 
-`LE_EMAIL`: for expiry notices when your certificate is coming up for renewal
+`LE_EMAIL`: for expiry notices when your [Let's Encrypt](https://letsencrypt.org/) certificate is coming up for renewal
 
 # Contributing
 
