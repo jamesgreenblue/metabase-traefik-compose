@@ -2,7 +2,7 @@ version: '3.8'
 services:
 
   metabase:
-    image: metabase/metabase:v0.46.6
+    image: metabase/metabase:v0.46.6.1
     container_name: metabase
     hostname: metabase
     volumes:
@@ -37,8 +37,8 @@ services:
     container_name: postgres
     hostname: postgres
     environment:
-      POSTGRES_USER_FILE: /run/secrets/db_user
       POSTGRES_DB: ${MB_DBNAME}
+      POSTGRES_USER_FILE: /run/secrets/db_user
       POSTGRES_PASSWORD_FILE: /run/secrets/db_password
     volumes:
       - ./postgres/data:/var/lib/postgresql/data
