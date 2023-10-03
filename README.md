@@ -17,11 +17,12 @@ A production ready docker compose file to deploy Metabase. Please refer to the o
 
 # Getting started
 
-1. Duplicate the .env.example file and rename it to .env
-2. Update the environment variables as needed
-3. Update `db_password.txt`, `db_user.txt` and `mb_key.txt` following the instructions in each file.
-4. Run `docker compose up -d` to create or update the docker containers from the compose file
-4. Run `docker compose down` to shut down the containers
+1. Clone the template somewhere sensible, i.e. `/srv/metabase`
+2. Duplicate the .env.example file and rename it to .env
+3. Update the environment variables as needed
+4. Update `db_password.txt`, `db_user.txt` and `mb_key.txt` following the instructions in each file.
+5. Run `docker compose up -d` to create or update the docker containers from the compose file
+6. Run `docker compose down` to shut down the containers
 
 ## Available environment variables
 
