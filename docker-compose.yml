@@ -50,7 +50,7 @@ services:
     restart: always
 
   traefik:
-    image: traefik:v2.10.5
+    image: traefik:v2.10.7
     container_name: traefik
     command:
       - "--providers.docker=true"
