@@ -2,7 +2,7 @@ version: '3.8'
 services:
 
   metabase:
-    image: metabase/metabase:v0.47.9
+    image: metabase/metabase:v0.48.1
     container_name: metabase
     hostname: metabase
     volumes:
@@ -33,7 +33,7 @@ services:
     restart: always
 
   postgres:
-    image: postgres:15.4
+    image: postgres:15.5
     container_name: postgres
     hostname: postgres
     environment:
