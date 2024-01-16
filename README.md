@@ -8,7 +8,7 @@ A production ready docker compose file to deploy Metabase. Please refer to the o
 - [Postgres](https://www.postgresql.org/) – database server used by the Metabase application
 - [Traefik](https://traefik.io/) – a reverse proxy that sits in front of Metabase and provides SSL termination (and generates [Let's Encrypt](https://letsencrypt.org/) certificates)
 
-⚠️ Docker images are continuously updated so please check the version tags and decide if you a newer version of the container would be more appropriate for your use case.
+⚠️ Docker images are continuously updated so please check the version tags and decide if a newer version of the container would be more appropriate for your use case.
 
 ## Requires:
 
