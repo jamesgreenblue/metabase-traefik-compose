@@ -1,8 +1,7 @@
-version: '3.8'
 services:
 
   metabase:
-    image: metabase/metabase:v0.49.7
+    image: metabase/metabase:v0.49.9
     container_name: metabase
     hostname: metabase
     volumes:
