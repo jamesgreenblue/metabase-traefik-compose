@@ -1,7 +1,7 @@
 services:
 
   metabase:
-    image: metabase/metabase:v0.49.9
+    image: metabase/metabase:v0.49.11
     container_name: metabase
     hostname: metabase
     volumes:
@@ -32,7 +32,7 @@ services:
     restart: always
 
   postgres:
-    image: postgres:15.6
+    image: postgres:15.7
     container_name: postgres
     hostname: postgres
     environment:
