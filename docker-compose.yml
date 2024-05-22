@@ -18,9 +18,9 @@ services:
       MB_ENCRYPTION_SECRET_KEY: /run/secrets/mb_key
     labels:
         - "traefik.enable=true"
-        - "traefik.http.routers.meta.rule=Host(`${MB_HOST}`)"
-        - "traefik.http.routers.meta.entrypoints=websecure"
-        - "traefik.http.routers.meta.tls.certresolver=myresolver"
+        - "traefik.http.routers.metabasereports.rule=Host(`${MB_HOST}`)"
+        - "traefik.http.routers.metabasereports.entrypoints=websecure"
+        - "traefik.http.routers.metabasereports.tls.certresolver=myresolver"
     networks:
       - metanet1
     depends_on:
@@ -49,23 +49,19 @@ services:
     restart: always
 
   traefik:
-    image: traefik:v2.11.3
+    image: traefik:v3.0.0
     container_name: traefik
     command:
       - "--providers.docker=true"
       - "--providers.docker.exposedbydefault=false"
       - "--entrypoints.web.address=:80"
+      - "--entrypoints.web.http.redirections.entrypoint.to=websecure"
+      - "--entrypoints.web.http.redirections.entrypoint.scheme=https"
       - "--entrypoints.websecure.address=:443"
       - "--certificatesresolvers.myresolver.acme.httpchallenge=true"
       - "--certificatesresolvers.myresolver.acme.httpchallenge.entrypoint=web"
       - "--certificatesresolvers.myresolver.acme.email=${LE_EMAIL}"
       - "--certificatesresolvers.myresolver.acme.storage=/letsencrypt/acme.json"
-    labels:
-      - "traefik.enable=true"
-      - "traefik.http.middlewares.redirect-to-https.redirectscheme.scheme=https"
-      - "traefik.http.routers.redirect-https.rule=hostregexp(`{host:.+}`)"
-      - "traefik.http.routers.redirect-https.entrypoints=web"
-      - "traefik.http.routers.redirect-https.middlewares=redirect-to-https"
     ports:
       - "80:80"
       - "443:443"

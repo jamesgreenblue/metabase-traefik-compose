@@ -23,6 +23,7 @@ A production ready docker compose file to deploy Metabase. Please refer to the o
 4. Update `db_password.txt`, `db_user.txt` and `mb_key.txt` following the instructions in each file.
 5. Run `docker compose up -d` to create or update the docker containers from the compose file
 6. Run `docker compose down` to shut down the containers
+7. Ensure DNS is pointed correctly and you have ports `80` and `443` open on your firewall
 
 ## Available environment variables
 
