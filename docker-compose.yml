@@ -1,7 +1,7 @@
 services:
 
   metabase:
-    image: metabase/metabase:v0.49.17
+    image: metabase/metabase:v0.49.21
     container_name: metabase
     hostname: metabase
     volumes:
@@ -49,7 +49,7 @@ services:
     restart: always
 
   traefik:
-    image: traefik:v3.0.3
+    image: traefik:v3.1.0
     container_name: traefik
     command:
       - "--providers.docker=true"
